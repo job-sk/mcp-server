@@ -1,2 +1,3 @@
-Do this after cloning
-##npm run dev
+Do this after cloning.\
+
+## npm run dev
