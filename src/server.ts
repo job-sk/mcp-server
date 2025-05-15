@@ -23,6 +23,15 @@ app.post("/connect", async (req, res) => {
   }
 });
 
+app.get("/available-tools", async (req, res) => {
+  try {
+    // await mcpClient.connectToServer(scriptPath);
+    res.json({ tools: mcpClient?.listTools() }); // or expose a getter
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.post("/query", async (req, res) => {
   const { prompt } = req.body;
   console.log(prompt,'body')

@@ -40,6 +40,10 @@ export class MCPClient {
     console.log("Connected tools:", this.tools.map((t) => t.name));
   }
 
+  listTools(){
+    return this.tools;
+  }
+
   async processQuery(query: string): Promise<string> {
     const messages: MessageParam[] = [{ role: "user", content: query }];
     console.log(messages,"messages");
